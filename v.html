@@ -1,0 +1,534 @@
+6<!DOCTYPE html>
+<html>
+
+<head>
+  <title>project web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --gray-1: #ddd;
+            --gray-2: #757575;
+            --gray-3: #222;
+            --white: #f1f1f1;
+            --black: #020202;
+            --gradient-black-gray-default: #222;
+            --gradient-black-gray: linear-gradient(135deg, #222, #020202);
+            --gradient-gray-black-default: #757575;
+            --gradient-gray-black: linear-gradient(135deg, #757575, #020202);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+  
+  body {
+            font-family: 'Rubik', sans-serif;
+            color: var(--gray-2);
+            background-color: var(--black);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 120px;
+            background-color: var(--gradient-black-gray-default);
+            background-image: var(--gradient-black-gray);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+  nav a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            padding: 20px 5px;
+            text-align: center;
+            transition: all .3s;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background-color: var(--black);
+        }
+
+        nav a i {
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        main {
+            margin-left: 120px;
+            padding: 0 30px;
+        }
+
+        main section {
+            margin: 40px 0;
+        }
+main section h2 {
+            font-weight: normal;
+            font-size: 30px;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        main section h3 {
+            font-weight: normal;
+            font-size: 22px;
+            margin-top: 34px;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        main section hr {
+            max-width: 180px;
+            border: none;
+            height: 5px;
+            background-color: var(--gradient-gray-black-default);
+            background-image: var(--gradient-gray-black);
+            margin-bottom: 15px;
+        }
+
+        main #home {
+            text-align: center;
+        }
+
+        
+  main #home h1 {
+            color: var(--white);
+            font-size: 48px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        main #home p {
+            font-weight: normal;
+            font-size: 20px;
+            margin-bottom: 70px;
+        }
+
+        main #home img {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 5px;
+        }
+
+        main #about p {
+            line-height: 28px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+  
+main #about ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+
+        main #about ul li {
+            line-height: 32px;
+        }
+
+        main #workout p {
+            line-height: 28px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        main #workout .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        main #workout .grid .card {
+            box-shadow: 2px 2px 5px var(--gray-3);
+            border-radius: 5px;
+            background-color: var(--gradient-black-gray-default);
+            background-image: var(--gradient-black-gray);
+        }
+
+        main #workout .grid .card h4 {
+            color: var(--gray-1);
+            border-bottom: 2px solid var(--gray-3);
+            padding: 20px 15px;
+            line-height: 30px;
+            font-weight: normal;
+        }
+  main #workout .grid .card ol {
+            list-style-position: inside;
+            padding: 15px 10px;
+        }
+
+        main #workout .grid .card ol li {
+            line-height: 32px;
+        }.container {
+            max-width: 600px;
+            margin: 0 auto;
+            
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        main #movies p {
+            line-height: 28px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        main #movies .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        main #movies .grid img {
+            width: 100%;
+        }
+  main #movies .grid div:nth-child(1) {
+            grid-row: 1 / 3;
+            grid-column: 1 / 3;
+        }
+
+        main #contact p {
+            margin-top: 20px;
+        }
+
+        main #contact .follow-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        main #contact p i {
+            font-size: 22px;
+            margin-right: 5px;
+            vertical-align: middle;
+            color: var(--gray-1);
+        }
+
+        main #contact .follow-links a {
+            display: block;
+            color: var(--white);
+            background-color: var(--gradient-black-gray-default);
+            background-image: var(--gradient-black-gray);
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            text-align: center;
+            border-radius: 50%;
+            margin: 5px;
+            transition: all .3s;
+            font-size: 20px;
+        }
+  
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+  main #contact .follow-links a:hover {
+            transform: translateY(-10px);
+        }
+
+        @media (max-width:960px) {
+            main #workout .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            main #movies .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            main #movies .grid div:nth-child(1) {
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+        }
+
+        @media (max-width:640px) {
+
+            nav {
+                height: auto;
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 0 20px;
+                margin-top: 130px;
+            }
+
+          main #workout .grid {
+                grid-template-columns: 1fr;
+            }
+
+            main #movies .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav>
+            <a href="#home">
+                <i class="fa-solid fa-house-chimney"></i>
+                HOME
+            </a>
+            <a href="#about">
+                <i class="fa-solid fa-user"></i>
+                ABOUT
+            </a>
+            <a href="#workout">
+                <i class="fa-solid fa-dumbbell"></i>
+                Submit an application 
+            </a>
+            <a href="#movies">
+                <i class="fa-solid fa-film"></i>
+                MOVIES
+            </a>
+            <a href="#contact">
+                <i class="fa-solid fa-envelope"></i>
+                CONTACT
+            </a>
+        </nav>
+        <main>
+            <section id="home">
+                <h1>Five star hotels</h1>
+                <p>Book now to enjoy comfort</p>
+                <img src="/storage/emulated/0/Download/exterior-view.jpg">
+            </section>
+          
+          <section id="about">
+                <h2>About us </h2>
+            
+                <hr>
+                <p>a hotel that provides a luxurious experience and high-end accommodations. Five-star hotels are known to be some of the most glamorous hospitality locations in the world due to the level ofservice they provide .
+                  What services does the hotel provide?
+ You can benefit from many of the services provided by the hotel, including:
+ Guard service.
+ Wi-Fi internet service in all hotel facilities
+ Reception and secretarial service around the clock.
+ 24-hour dry cleaning and ironing service, with clothes restored in less than two hours.
+ Morning and evening housekeeping service.
+ Luggage transportation and delivery service is available.).</p>
+    <div class="container">
+        <h1>Rate Our Website</h1>
+        <p>We would appreciate if you could take a moment to rate our website before leaving.</p>
+        <form>
+            <input type="radio" name="rating" value="excellent"> Excellent
+            <input type="radio" name="rating" value="good"> Good
+            <input type="radio" name="rating" value="average"> Average
+            <input type="radio" name="rating" value="poor"> Poor
+            <br><br>
+          
+           <h2>Enter your gmail to Rate </h2>
+    <form action="mailto:jhod1315@gmail.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="بريدك الإلكتروني" required><br><br>
+            <input type="submit" value="Submit Rating">
+          
+       
+            </div>
+                <h3>Basic Info</h3>
+                <ul>
+                    <li>You must have a passport or identity card</li>
+                    <li>Pay half the amount in advance in cash or on our account (2854321)</li>
+                    <li>It is forbidden for persons without children to enter unless they have a marriage contract</li>
+                    <li>The hotel has the right to expel the visitor if he disturbs the rest of the guests</li>
+                </ul>
+            </section>
+          
+          <section id="workout">
+                <h2>Submit an application </h2>
+                <div class="container">
+        <h1>نموذج الحجز</h1>
+        <form id="booking-form" action="mailto:ahmeedhail27@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="booking-date">تاريخ الحجز:</label>
+                <input type="date" id="booking-date" name="booking-date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">إرسال الحجز</button>
+                 <h2>أدخل عنوان بريدك الإلكتروني لي تاكيد الحجز</h2>
+    <form action="mailto:jhod1315@gmail.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="بريدك الإلكتروني" required><br><br>
+        <input type="submit" value="إرسال">
+            </div>
+        </form>
+    </div>
+                <h3>instructions</h3>
+                <p></p>
+                <div class="grid">
+                    <div class="card">
+                        <h4>request </h4>
+                        <ol>
+                            <li>Enter the site</li>
+                            <li>Click on "Submit an application
+ ") on the main page</li>
+                            <li>Enter the number and email and make sure it is correct)</li>
+                            <li>Click book and enjoy your vacation</li>
+                            <
+                        </ol>
+                      </div>
+                    <div class="card">
+                        <h4>asked for something inside the hotel</h4>
+                        <ol>
+                            <li>Click on the services bell for me so that the bell will come to you</li>
+                            <li> Click on the hotel meal orders screen</li>
+                            <li> </li>
+                            <li>Call the hotels landline for assistance
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="card">
+                        <h4>case of emergency</h4>
+                        <ol>
+                            <li>There is a first aid cabinet</li>
+                            <li>If necessary, there is a clinic in the basement of the hotel</li>
+                            
+                    </div>
+                  <div class="card">
+                        <h4>Available apartment prices</h4>
+                        <ol>
+                            <li>Studio room
+                              price $100.00</li>
+                            
+                            <li>Deluxe room price is $150.00 </li>
+                          
+                            <li>   pministerrice $200.00</li>
+                        </ol>
+                    </div>
+                    <div class="card">
+                        <h4>availabe suite price</h4>
+                        <ol>
+                            <li>Executive Suite price $90.00</li>
+                            <li>Deluxe Suite price $200.00</li>
+                            <li>Ambassadors Suite price $200.00</li>
+                            <li>Studio Suite price $100.00</li>
+                            
+                        </ol>
+                    </div>
+                    <div class="card">
+                        
+                        
+                    </div>
+                </div>
+            </section>
+            <section id="movies">
+                <h2>image room </h2>
+                <hr>
+                <p>Here are some of my best  room.</p>
+                <div class="grid">
+                    <div>
+                        <img src="/storage/emulated/0/Download/nhnngybeexvrtk7su4p9.jpeg">
+                    </div>
+                    <div>
+                        <img src="/storage/emulated/0/Download/11-5.jpg">
+                    </div>
+                    <div>
+                        <img src="/storage/emulated/0/Download/queen-centro-room.jpg">
+                    </div>
+                    <div>
+                        <img src="/storage/emulated/0/Download/82235468.jpg">
+                    </div>
+                    <div>
+                      <img src="storage/emulated/0/Download/82235468.jpg">
+                    </div>
+                    <div>
+                        <img src="/storage/emulated/0/Download/exterior.jpg">
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <h2>Contact us</h2>
+                <hr>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +966 53 605 4927
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                   startfivehotal@gmail.com
+                </p>
+                <div class="follow-links">
+                    <a href="#" title="follow on Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" title="follow on Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" title="follow on Intagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+              </section>
+        </main>
+    </div>
+</body>
+
+</html>
